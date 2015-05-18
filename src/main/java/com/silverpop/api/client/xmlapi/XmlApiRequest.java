@@ -60,7 +60,6 @@ public class XmlApiRequest implements ApiRequest {
 	@Override
 	public Map<String, String> getParameters() {
 		Map<String,String> requestParameters = new HashMap<String,String>();
-		requestParameters.put(SESSION_PARAMETER, apiSession.getSessionId());
 		requestParameters.put(XML_PARAMETER, marshallCommand());
 		
 		return requestParameters;

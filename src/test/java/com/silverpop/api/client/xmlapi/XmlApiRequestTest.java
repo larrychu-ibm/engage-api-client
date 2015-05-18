@@ -57,7 +57,6 @@ public class XmlApiRequestTest {
 	public void getParametersReturnsTwoParametersNamedXmlAndJsessionId() {
 		Map<String,String> parameters = request.getParameters();
 		
-		assertTrue(parameters.containsKey(XmlApiRequest.SESSION_PARAMETER));
 		assertTrue(parameters.containsKey(XmlApiRequest.XML_PARAMETER));
 	}
 	
@@ -70,11 +69,5 @@ public class XmlApiRequestTest {
 		assertTrue(xml.contains("<Body>") && xml.contains("</Body>"));
 		assertTrue(xml.contains("<XmlApiCommand>") && xml.contains("</XmlApiCommand>"));
 	}
-	
-	@Test
-	public void jsessionIdParameterIsFromSession() {
-		Map<String,String> parameters = request.getParameters();
-		
-		assertEquals(parameters.get(XmlApiRequest.SESSION_PARAMETER), JSESSION_ID);
-	}
+
 }
